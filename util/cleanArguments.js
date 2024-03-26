@@ -38,7 +38,7 @@ function cleanArguments(argv, tmpFilesDir) {
         }
 
         argv.geojson = (path.extname(argv.geojson) === '.geojson') ? argv.geojson : String(argv.geojson).concat('.geojson');
-        var tmpGeojson = tmpFilesDir + path.baseName(argv.geojson);
+        var tmpGeojson = tmpFilesDir + path.basename(argv.geojson);
 
         if (fs.existsSync(argv.geojson)) {
             fs.unlinkSync(argv.geojson);
